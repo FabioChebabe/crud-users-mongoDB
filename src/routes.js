@@ -1,10 +1,9 @@
 const { Router } = require('express');
+const { listUsers } = require('./app/useCases/users/listUsers');
 
 const router = Router();
 
-router.get('/', (req, resp) => {
-  resp.status(200).json({ success: 'Get list of all users' });
-});
+router.get('/', listUsers);
 
 router.post('/', (req, resp) => {
   resp.status(200).json({ success: 'Create an user' });
